@@ -8,6 +8,10 @@
         templateUrl: "/public/views/partials/list.html",
         controller: "ListArticlesCtrl as list"
       })
+      .when("/articles/new", {
+        templateUrl: "/public/views/partials/create.html",
+        controller: "CreateArticleCtrl as create"
+      })
       .when("/articles/:articleId", {
         templateUrl: "/public/views/partials/show.html",
         controller: "ShowArticleCtrl as show"

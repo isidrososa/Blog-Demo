@@ -1,0 +1,8 @@
+<div>
+  <h1>New</h1>
+  <form name="articleForm" role="form" data-ng-submit="create.createArticle(articleForm.$valid)" class="form-inline" novalidate>
+    <input type="text" ng-model="create.article.title" class="form-control" placeholder="Title"/>
+    <textarea ng-model="create.article.body" class="form-control" placeholder="Content"></textarea>
+    <input type="submit" value="Save" class="btn btn-primary form-control"/>
+  </form>
+</div>
