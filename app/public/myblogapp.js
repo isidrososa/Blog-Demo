@@ -4,11 +4,11 @@
   app.config(["$routeProvider", function($routeProvider) {
     $routeProvider
       .when("/", {
-        templateUrl: "../views/partials/list.html",
+        templateUrl: "/public/views/partials/list.html",
         controller: "PostListCtrl as posts"
       })
       .when("/posts/:postId", {
-        templateUrl: "../views/partials/show.html",
+        templateUrl: "/public/views/partials/show.html",
         controller: "ShowPostCtrl as post"
       });
   }]);
