@@ -1,7 +1,7 @@
-<ul>
-  <li ng-repeat="post in posts.posts | orderBy: '-createdAt'" id="article{{post.postId}}">
-    <h1><a href="#/posts/{{post.postId}}">{{post.title}}</a></h1>
-    <h4>{{post.createdAt | date}} | By {{post.author}}</h4>
-    {{post.content}}
+<ul class="list-unstyled">
+  <li ng-repeat="post in posts.articles" id="article{{post.postId}}">
+    <h1><a href="#/posts/{{post.id}}">{{post.title}}</a></h1>
+    {{post.body}}...
+    <a href="#/posts/{{post.id}}">leer más</a>
   </li>
 </ul>

@@ -1,6 +1,7 @@
 (function() {
   'use strict';
-  var app = angular.module("myBlogApp", ["ngRoute"]);
+  var app = angular.module("myBlogApp", ["ngRoute", "ngResource"]);
+
   app.config(["$routeProvider", function($routeProvider) {
     $routeProvider
       .when("/", {
