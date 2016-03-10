@@ -1,8 +1,8 @@
 (function() {
   angular.module("myBlogApp")
-    .controller("PostListCtrl", ['Articles', PostListCtrl]);
+    .controller("ListArticlesCtrl", ['Articles', ListArticlesCtrl]);
 
-  function PostListCtrl(Articles) {
+  function ListArticlesCtrl(Articles) {
     console.log("Hola");
     var me = this;
 

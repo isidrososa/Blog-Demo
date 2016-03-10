@@ -1,7 +1,9 @@
 <ul class="list-unstyled">
-  <li ng-repeat="post in posts.articles" id="article{{post.postId}}">
-    <h1><a href="#/posts/{{post.id}}">{{post.title}}</a></h1>
-    {{post.body}}...
-    <a href="#/posts/{{post.id}}">leer más</a>
+  <li ng-repeat="article in list.articles" id="article{{article.articleId}}">
+    <h1><a href="#/articles/{{article.id}}">{{article.title}}</a></h1>
+    <p>
+      {{article.body}}...
+      <a href="#/articles/{{article.id}}">leer más</a>
+    </p>
   </li>
 </ul>

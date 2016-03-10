@@ -6,11 +6,11 @@
     $routeProvider
       .when("/", {
         templateUrl: "/public/views/partials/list.html",
-        controller: "PostListCtrl as posts"
+        controller: "ListArticlesCtrl as list"
       })
-      .when("/posts/:postId", {
+      .when("/articles/:articleId", {
         templateUrl: "/public/views/partials/show.html",
-        controller: "ShowPostCtrl as post"
+        controller: "ShowArticleCtrl as show"
       });
   }]);
 }());
