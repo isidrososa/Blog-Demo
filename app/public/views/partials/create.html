@@ -1,17 +1,10 @@
 <div>
   <h1>New</h1>
-  <form name="articleForm" role="form" data-ng-submit="create.createArticle(articleForm.$valid)" class="form-inline" novalidate>
+  <form name="articleForm" role="form" data-ng-submit="create.createArticle(articleForm.$valid)" novalidate>
 
-    <div class="form-group" ng-class="{ 'has-error' : create.submitted && articleForm.title.$error.required }">
-      <input name="title" type="text" data-ng-model="create.article.title" class="form-control" placeholder="Title" required/>
-      <div ng-show="create.submitted && articleForm.title.$error.required" class="error">
-        <p ng-show="articleForm.create.title.$error.required">
-          Title is required
-        </p>
-      </div>
-    </div>
+    <input name="title" type="text" data-ng-model="create.article.title" class="form-control" placeholder="Title" required/>
 
-    <textarea type="text" data-ng-model="create.article.abstract" class="form-control" placeholder="Abstract" required></textarea>
+    <textarea type="text" data-ng-model="create.article.abstract" class="form-control" placeholder="Abstract" rows="3" required></textarea>
 
     <textarea data-ng-model="create.article.body" class="form-control" placeholder="Content" rows="10" required></textarea>
 
