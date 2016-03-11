@@ -6,15 +6,15 @@
     $routeProvider
       .when("/", {
         templateUrl: "/public/views/partials/list.html",
-        controller: "ListArticlesCtrl as list"
+        controller: "ArticlesCtrl as list"
       })
       .when("/articles/new", {
         templateUrl: "/public/views/partials/create.html",
-        controller: "CreateArticleCtrl as create"
+        controller: "ArticlesCtrl as create"
       })
       .when("/articles/:articleId", {
         templateUrl: "/public/views/partials/show.html",
-        controller: "ShowArticleCtrl as show"
+        controller: "ArticlesCtrl as show"
       });
   }]);
 }());
