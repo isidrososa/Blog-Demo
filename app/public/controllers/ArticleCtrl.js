@@ -7,8 +7,12 @@
     var cont = Articles.length;
     me.articles = Articles;
 
-    me.findArticle = function() {
-      me.article = me.articles[$routeParams.articleId];
+    me.findArticleById = function() {
+      for(var i = 0; i < me.articles.length; i++) {
+        if(me.articles[i].id == $routeParams.articleId) {
+          me.article = me.articles[i];
+        }
+      }
     };
 
     me.createArticle = function(isValid) {
