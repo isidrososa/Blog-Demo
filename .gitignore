@@ -1,6 +1,7 @@
-/node_modules/
-app/assets/scss/
 Gulpfile.js
 .jshintrc
-/app/lib/
-/app/sass/
+
+/node_modules/
+
+/app/public/lib/
+/app/public/assets/scss/
