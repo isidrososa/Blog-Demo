@@ -7,12 +7,17 @@
     var cont = Articles.length;
     me.articles = Articles;
 
+    // Show article
     me.findArticleById = function() {
       for(var i = 0; i < me.articles.length; i++) {
         if(me.articles[i].id == $routeParams.articleId) {
           me.article = me.articles[i];
         }
       }
+    };
+
+    me.addLikes = function() {
+      me.article.likes++;
     };
 
     me.createArticle = function(isValid) {

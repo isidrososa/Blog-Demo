@@ -1,7 +1,14 @@
 <div ng-init="show.findArticleById()">
-  <h5>{{show.article.createdAt | date}}</h5>
-  <h1>{{show.article.title}}</h1>
-  <h3>{{show.article.abstract}}</h3>
-  <h5 class="text-right">By <a href="#/authors/id">{{show.article.author}}</a></h5>
-  <div class="article-body"ng-bind-html="show.article.body"></div>
+  <div class="col-xs-6 col-md-4 col-md-offset-2">
+    <h5>{{show.article.createdAt | date}}</h5>
+  </div>
+  <div class="col-xs-6 col-md-4">
+    <h5 class="text-right" ng-click="show.addLikes()">likes {{show.article.likes || 0}}</h5>
+  </div>
+  <div class="col-md-8 col-md-offset-2">
+    <h1 class="text-center">{{show.article.title}}</h1>
+    <h3>{{show.article.abstract}}</h3>
+    <h5 class="text-right">By <a href="#/authors/id">{{show.article.author}}</a></h5>
+    <div class="article-body"ng-bind-html="show.article.body"></div>
+  </div>
 </div>
