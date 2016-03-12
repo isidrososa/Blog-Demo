@@ -1,6 +1,6 @@
 (function() {
   'use strict';
-  var app = angular.module("myBlogApp", ["ngRoute", "ngResource", "ngCkeditor"]);
+  var app = angular.module("myBlogApp", ["ngRoute", "ngResource", "ngCkeditor", "ngSanitize"]);
 
   app.config(["$routeProvider", function($routeProvider) {
     $routeProvider

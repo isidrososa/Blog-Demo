@@ -1,4 +1,4 @@
 <div ng-init="show.findArticleById()">
   <h1>{{show.article.title}}</h1>
-  <p>{{show.article.body}}</p>
+  <div ng-bind-html="show.article.body"></div>
 </div>
