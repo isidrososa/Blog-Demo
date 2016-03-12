@@ -24,5 +24,10 @@
         $location.path('/');
       }
     };
+
+    me.editorOptions = {
+      'language': 'en',
+      'uiColor': '#000000'
+    };
   };
 }());

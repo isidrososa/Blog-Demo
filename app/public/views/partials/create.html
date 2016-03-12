@@ -6,7 +6,7 @@
 
     <textarea type="text" data-ng-model="create.article.abstract" class="form-control" placeholder="Abstract" rows="3" required></textarea>
 
-    <textarea data-ng-model="create.article.body" class="form-control" placeholder="Content" rows="10" required></textarea>
+    <textarea ckeditor="create.editorOptions" data-ng-model="create.article.body" class="form-control"></textarea>
 
     <input type="submit" value="Save" class="btn btn-primary form-control"/>
 
