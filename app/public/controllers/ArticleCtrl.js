@@ -20,13 +20,16 @@
       me.article.likes++;
     };
 
+    // Create Article
     me.createArticle = function(isValid) {
       if (isValid) {
         var item = me.article;
-        item.id = cont++;
+        item.id = cont;
+        cont++;
         item.createdAt = new Date();
+        item.likes = 0;
         me.articles.push(item);
-        $location.path('/');
+        $location.path('/articles/' + item.id);
       }
     };
 
