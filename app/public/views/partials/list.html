@@ -9,6 +9,7 @@
         {{article.abstract}}...
         <a href="#/articles/{{article.id}}">more</a>
         <a href="#/articles/{{article.id}}/edit">edit</a>
+        <a ng-click="list.remove(article)">delete</a>
       </p>
     </div>
   </li>

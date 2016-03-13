@@ -54,6 +54,19 @@
       }
     };
 
+    // Delete article
+
+    me.remove = function(article) {
+      if (article) {
+        for(var i in me.articles) {
+          if (me.articles[i] === article) {
+            me.articles.splice(i, 1);
+            $location.path('/');
+          }
+        }
+      }
+    };
+
     me.editorOptions = {
       'language': 'en',
       'uiColor': '#000000'
