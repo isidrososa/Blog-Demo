@@ -21,15 +21,19 @@
     };
 
     // Create Article
-    me.createArticle = function(isValid) {
+    me.submitted = false;
+    me.createArticle = function(isValid, form) {
+      console.log(form);
       if (isValid) {
         var item = me.article;
         item.id = cont;
-        cont++;
         item.createdAt = new Date();
         item.likes = 0;
         me.articles.push(item);
         $location.path('/articles/' + item.id);
+        cont++;
+      } else {
+        me.submitted = true;
       }
     };
 
