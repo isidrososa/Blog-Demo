@@ -1,14 +1,22 @@
-<div>
+<div class="article-create">
   <h1>New</h1>
   <form name="articleForm" role="form" data-ng-submit="create.createArticle(articleForm.$valid)" novalidate>
 
-    <input name="title" type="text" data-ng-model="create.article.title" class="form-control" placeholder="Title" required/>
+    <div class="form-group">
+      <label class="control-label" for="title">Title</label>
+      <input name="title" type="text" data-ng-model="create.article.title" class="form-control" placeholder="Title" required/>
+    </div>
+    <div class="form-group">
+      <label class="control-label" for="abstract">Abstract</label>
+      <textarea type="text" data-ng-model="create.article.abstract" class="form-control" placeholder="Abstract" rows="3" required></textarea>
+    </div>
 
-    <textarea type="text" data-ng-model="create.article.abstract" class="form-control" placeholder="Abstract" rows="3" required></textarea>
+    <div class="form-group">
+      <label class="control-label" for="body">Content</label>
+      <textarea ckeditor="create.editorOptions" data-ng-model="create.article.body" class="form-control"></textarea>
+    </div>
 
-    <textarea ckeditor="create.editorOptions" data-ng-model="create.article.body" class="form-control"></textarea>
-
-    <input type="submit" value="Save" class="btn btn-primary form-control"/>
+      <input type="submit" value="Save" class="btn btn-primary form-control"/>
 
   </form>
 </div>
