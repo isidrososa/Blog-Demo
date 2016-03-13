@@ -1,0 +1,31 @@
+<div class="article-edit" ng-init="edit.findArticleById()">
+  <h1 class="text-center">Edit Article</h1>
+  <div class="col-md-8 col-md-offset-2">
+    <form name="articleForm" role="form" data-ng-submit="edit.editArticle(articleForm.$valid)" novalidate>
+
+      <div class="form-group" ng-class="{ 'has-error' : edit.submitted && articleForm.title.$invalid }">
+        <label class="control-label" for="title">Title</label>
+        <input name="title" type="text" data-ng-model="edit.article.title" class="form-control" placeholder="Title" required/>
+        <div class="control-label" ng-show="edit.submitted && articleForm.title.$invalid">
+          <p ng-show="articleForm.title.$error.required">Article title is required</p>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label" for="abstract">Abstract</label>
+        <textarea name="abstract" type="text" data-ng-model="edit.article.abstract" class="form-control" placeholder="Abstract" rows="3"></textarea>
+        <span id="helpBlock" class="help-block">Abstract is no required</span>
+      </div>
+
+      <div class="form-group" ng-class="{ 'has-error' : edit.submitted && articleForm.body.$invalid }">
+        <label class="control-label" for="body">Content</label>
+        <textarea name="body" ckeditor="edit.editorOptions" data-ng-model="edit.article.body" class="form-control" required></textarea>
+        <div class="control-label" ng-show="edit.submitted && articleForm.body.$invalid">
+          <p ng-show="articleForm.body.$error.required">Article content is required</p>
+        </div>
+      </div>
+
+      <input type="submit" value="Save" class="btn btn-primary form-control"/>
+    </form>
+  </div>
+</div>

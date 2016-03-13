@@ -15,6 +15,10 @@
       .when("/articles/:articleId", {
         templateUrl: "/public/views/partials/show.html",
         controller: "ArticlesCtrl as show"
+      })
+      .when("/articles/:articleId/edit", {
+        templateUrl: "/public/views/partials/edit.html",
+        controller: "ArticlesCtrl as edit"
       });
   }]);
 }());

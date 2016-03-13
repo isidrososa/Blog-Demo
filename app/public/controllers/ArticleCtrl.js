@@ -37,6 +37,23 @@
       }
     };
 
+    // Edit article
+    me.editArticle = function(isValid) {
+      if (isValid) {
+        var item = me.article;
+        for(var i = 0; i < me.articles.length; i++) {
+          if (item.id == me.articles[i].id) {
+            me.articles[i].title = item.title;
+            me.articles[i].body = item.body;
+            me.articles[i].abstract = item.abstract;
+            $location.path('/articles/' + item.id);
+          }
+        }
+      } else {
+        me.submitted = true;
+      }
+    };
+
     me.editorOptions = {
       'language': 'en',
       'uiColor': '#000000'
