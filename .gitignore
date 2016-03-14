@@ -1,5 +1,6 @@
 Gulpfile.js
 .jshintrc
+.tern-port
 
 /node_modules/
 
