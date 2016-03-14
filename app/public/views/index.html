@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en" ng-app="myBlogApp">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>Blog</title>
+    <link rel="stylesheet" href="/assets/css/app.css" />
+    <script src="/lib/angular/angular.min.js"></script>
+    <script src="/lib/angular-resource/angular-resource.min.js"></script>
+    <script src="/lib/angular-route/angular-route.min.js"></script>
+    <script src="/lib/angular-sanitize/angular-sanitize.min.js"></script>
+    <script src="/lib/ng-ckeditor/libs/ckeditor/ckeditor.js"></script>
+    <script src="/lib/ng-ckeditor/ng-ckeditor.min.js"></script>
+    <script src="/myblogapp.js"></script>
+    <script src="/services/articles.js"></script>
+    <script src="/controllers/ArticleCtrl.js"></script>
+  </head>
+  <body>
+    <div ng-include="'/views/include/header.html'"></div>
+
+    <section class="container">
+      <div ng-view></div>
+    </section>
+
+    <script src="/lib/jquery/dist/jquery.min.js"></script>
+    <script src="/lib/bootstrap-sass/assets/javascripts/bootstrap.min.js"></script>
+  </body>
+</html>
