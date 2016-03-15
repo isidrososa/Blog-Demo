@@ -7,6 +7,7 @@
     "consolidate": "^0.14.0",
     "express": "^4.13.4",
     "gulp-live-server": "0.0.29",
+    "mongoose": "^4.4.7",
     "multer": "^1.1.0",
     "path": "^0.12.7",
     "serve-static": "^1.10.2",
