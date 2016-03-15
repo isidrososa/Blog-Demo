@@ -5,7 +5,7 @@
   function ArticlesCtrl($routeParams, $location, Articles) {
     var me = this;
     var cont = Articles.length;
-    me.articles = Articles;
+    me.articles = Articles.query();
 
     // Show article
     me.findArticleById = function() {

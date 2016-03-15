@@ -5,6 +5,18 @@
 
     var articleRouter = express.Router();
 
+    articleRouter.route('/')
+      .get(function(req, res) {
+        Article.find(function(err, articles) {
+          if (err) {
+            res.status(500).send(err);
+            console.log(err);
+          } else {
+            res.json(articles);
+          }
+        });
+      });
+
     articleRouter.use('/:articleId', function(req, res, next) {
       Article.findById(req.params.articleId, function(err, article) {
         if (err) {
