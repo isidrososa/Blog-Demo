@@ -4,9 +4,12 @@
 
   function ArticlesCtrl($routeParams, $location, Articles) {
     var me = this;
-    var cont = Articles.length;
-    me.articles = Articles.query();
-    console.log(me.articles);
+
+    me.find = function() {
+      Articles.query(function(articles) {
+        me.articles = articles;
+      });
+    };
 
     // Show article
     me.findArticleById = function() {
@@ -57,7 +60,6 @@
     };
 
     // Delete article
-
     me.remove = function(article) {
       if (article) {
         article.$remove(function(response) {
