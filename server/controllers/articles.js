@@ -44,6 +44,19 @@
         });
       },
 
+      destroy: function(req, res) {
+        var article = req.article;
+        article.remove(function(err) {
+          if (err) {
+            return res.status(500).json({
+              error: 'Cannot delete the  article'
+            });
+          }
+
+          res.json(article);
+        });
+      },
+
       show: function(req, res) {
         res.json(req.article);
       },

@@ -11,7 +11,8 @@
       .post(articles.create);
     articleRouter.route('/:articleId')
       .get(articles.show)
-      .put(articles.update);
+      .put(articles.update)
+      .delete(articles.destroy);
 
     articleRouter.param('articleId', articles.article);
     return articleRouter;

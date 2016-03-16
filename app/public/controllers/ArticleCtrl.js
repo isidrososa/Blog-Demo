@@ -58,12 +58,18 @@
 
     me.remove = function(article) {
       if (article) {
-        for(var i in me.articles) {
-          if (me.articles[i] === article) {
-            me.articles.splice(i, 1);
-            $location.path('/');
+        article.$remove(function(response) {
+          for(var i in me.articles) {
+            if (me.articles[i] === article) {
+              me.articles.splice(i, 1);
+            }
           }
-        }
+          $location.path('/');
+        });
+      } else {
+        me.article.$remove(function(response) {
+          $location.path('/');
+        });
       }
     };
 
