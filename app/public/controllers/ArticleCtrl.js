@@ -18,7 +18,9 @@
     };
 
     me.addLikes = function() {
-      me.article.likes++;
+      var article = me.article;
+      article.likes = me.article.likes+=1;
+      article.$update();
     };
 
     // Create Article
