@@ -81,5 +81,10 @@
       'language': 'en',
       'uiColor': '#000000'
     };
+
+    me.shortBody = function(body) {
+      var data = body.split("</p>", 1)[0];
+      me.data = data.split("<p>")[1];
+    };
   }
 }());
