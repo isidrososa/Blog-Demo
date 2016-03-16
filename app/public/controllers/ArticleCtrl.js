@@ -6,11 +6,13 @@
     var me = this;
     var cont = Articles.length;
     me.articles = Articles.query();
+    console.log(me.articles);
 
     // Show article
     me.findArticleById = function() {
       for(var i = 0; i < me.articles.length; i++) {
-        if(me.articles[i].id == $routeParams.articleId) {
+        if(me.articles[i]._id == $routeParams.articleId) {
+          console.log(me.articles.length);
           me.article = me.articles[i];
         }
       }
@@ -26,11 +28,11 @@
       console.log(form);
       if (isValid) {
         var item = me.article;
-        item.id = cont;
+        item._id = cont;
         item.createdAt = new Date();
         item.likes = 0;
         me.articles.push(item);
-        $location.path('/articles/' + item.id);
+        $location.path('/articles/' + item._id);
         cont++;
       } else {
         me.submitted = true;
@@ -42,11 +44,11 @@
       if (isValid) {
         var item = me.article;
         for(var i = 0; i < me.articles.length; i++) {
-          if (item.id == me.articles[i].id) {
+          if (item._id == me.articles[i]._id) {
             me.articles[i].title = item.title;
             me.articles[i].body = item.body;
             me.articles[i].abstract = item.abstract;
-            $location.path('/articles/' + item.id);
+            $location.path('/articles/' + item._id);
           }
         }
       } else {
