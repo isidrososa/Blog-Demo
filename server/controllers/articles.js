@@ -30,6 +30,20 @@
         });
       },
 
+      update: function(req, res) {
+        var article = req.article;
+
+        article = _.extend(article, req.body);
+        article.save(function(err) {
+          if (err) {
+            return res.status(500).json({
+              error: 'Cannot update the article'
+            });
+          }
+          res.json(article);
+        });
+      },
+
       show: function(req, res) {
         res.json(req.article);
       },

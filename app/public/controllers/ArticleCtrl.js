@@ -38,15 +38,17 @@
     // Edit article
     me.editArticle = function(isValid) {
       if (isValid) {
-        var item = me.article;
-        for(var i = 0; i < me.articles.length; i++) {
-          if (item._id == me.articles[i]._id) {
-            me.articles[i].title = item.title;
-            me.articles[i].body = item.body;
-            me.articles[i].abstract = item.abstract;
-            $location.path('/articles/' + item._id);
-          }
+        var article = me.article;
+
+        if (!article.updated) {
+          article.updated = [];
         }
+
+        article.updated.push(new Date().getTime());
+
+        article.$update(function() {
+          $location.path('/articles/' + article._id);
+        });
       } else {
         me.submitted = true;
       }

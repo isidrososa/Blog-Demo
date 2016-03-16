@@ -8,6 +8,10 @@
   function Articles($resource) {
     return $resource('/api/articles/:articleId', {
       articleId: '@_id'
+    }, {
+      update: {
+        method: 'PUT'
+      }
     });
   }
 }());

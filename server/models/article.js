@@ -27,8 +27,11 @@ var ArticleSchema = new Schema({
   },
   likes: {
     type: Number,
-    defualt: 0,
+    default: 0,
     trim: true
+  },
+  updated: {
+    type: Array
   }
 });
 
