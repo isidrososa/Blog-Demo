@@ -4,37 +4,15 @@
   module.exports = function(Article) {
 
     var articleRouter = express.Router();
+    var articles = require('../controllers/articles')(Article);
 
     articleRouter.route('/')
-      .get(function(req, res) {
-        Article.find(function(err, articles) {
-          if (err) {
-            res.status(500).send(err);
-            console.log(err);
-          } else {
-            res.json(articles);
-          }
-        });
-      });
-
-    articleRouter.use('/:articleId', function(req, res, next) {
-      Article.findById(req.params.articleId, function(err, article) {
-        if (err) {
-          res.status(500).send(err);
-          console.log(err);
-        } else if(article){
-          req.article = article;
-          next();
-        } else {
-          res.status(404).send('no article found ' + req.params.articleId);
-        }
-      });
-    });
-
+      .get(articles.all)
+      .post(articles.create);
     articleRouter.route('/:articleId')
-      .get(function(req, res) {
-        res.json(req.article);
-      });
+      .get(articles.show);
+
+    articleRouter.param('articleId', articles.article);
     return articleRouter;
   };
 }());

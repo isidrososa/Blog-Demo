@@ -10,12 +10,11 @@
 
     // Show article
     me.findArticleById = function() {
-      for(var i = 0; i < me.articles.length; i++) {
-        if(me.articles[i]._id == $routeParams.articleId) {
-          console.log(me.articles.length);
-          me.article = me.articles[i];
-        }
-      }
+      Articles.get({
+        articleId: $routeParams.articleId
+      }, function(article) {
+        me.article = article;
+      });
     };
 
     me.addLikes = function() {
@@ -24,16 +23,13 @@
 
     // Create Article
     me.submitted = false;
-    me.createArticle = function(isValid, form) {
-      console.log(form);
+    me.createArticle = function(isValid) {
       if (isValid) {
-        var item = me.article;
-        item._id = cont;
-        item.createdAt = new Date();
-        item.likes = 0;
-        me.articles.push(item);
-        $location.path('/articles/' + item._id);
-        cont++;
+        var item = new Articles(me.article);
+        item.$save(function(response) {
+          $location.path('/articles/' + item._id);
+        });
+        me.article = {};
       } else {
         me.submitted = true;
       }
