@@ -8,8 +8,11 @@
     </div>
     <div class="col-xs-12 col-md-8 col-md-offset-2">
       <h1 class="text-center">{{show.article.title}}</h1>
+
       <h3>{{show.article.abstract}}</h3>
-      <h5 class="text-right">By <a href="#/authors/id">{{show.article.author}}</a></h5>
+
+        <h5 class="text-right">By <a href="#/authors/{{show.article.author}}">{{show.articleAuthor(show.article.author).name}}</a></h5>
+
       <div class="article-body" ng-bind-html="show.article.body"></div>
     </div>
     <div class="col-xs-12 col-md-8 col-md-offset-2">

@@ -19,6 +19,12 @@
       .when("/articles/:articleId/edit", {
         templateUrl: "/views/partials/edit.html",
         controller: "ArticlesCtrl as edit"
-      });
+      })
+      .when("/authors/:authorId", {
+        templateUrl: "/views/partials/showByAuthor.html",
+        controller: "AuthorsCtrl as author"
+      })
+    ;
+
   }]);
 }());

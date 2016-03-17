@@ -1,8 +1,8 @@
 (function() {
   angular.module("myBlogApp")
-    .controller("ArticlesCtrl", ['$routeParams', '$location', 'Articles', ArticlesCtrl]);
+    .controller("ArticlesCtrl", ['$routeParams', '$location', 'Articles', 'Authors', ArticlesCtrl]);
 
-  function ArticlesCtrl($routeParams, $location, Articles) {
+  function ArticlesCtrl($routeParams, $location, Articles, Authors) {
     var me = this;
 
     me.find = function() {
@@ -85,6 +85,14 @@
     me.shortBody = function(body) {
       var data = body.split("</p>", 1)[0];
       me.data = data.split("<p>")[1];
+    };
+
+    me.articleAuthor = function(authorId) {
+      for(var i = 0; i < Authors.length; i++) {
+        if (authorId === Authors[i].id) {
+         return Authors[i];
+        }
+      }
     };
   }
 }());

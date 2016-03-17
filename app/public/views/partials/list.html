@@ -3,7 +3,9 @@
   <li ng-repeat="article in list.articles | orderBy: '-createdAt'" id="article{{article.articleId}}">
     <div class="col-md-8 col-md-offset-2">
       <h1 class="text-center"><a href="#/articles/{{article._id}}">{{article.title}}</a></h1>
-      <h5 class="text-center">{{article.createdAt | date}} | By {{article.author}}</h5>
+      <h5 class="text-center">{{article.createdAt | date}} | By
+        <a href="#/authors/{{article.author}}">{{list.articleAuthor(article.author).name}}</a>
+      </h5>
       <p>
         <div ng-show="article.abstract">
           <p>{{article.abstract}}...</p>
