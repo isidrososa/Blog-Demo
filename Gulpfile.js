@@ -12,13 +12,13 @@
   });
 
   gulp.task('sass', function () {
-    return gulp.src('./app/public/assets/scss/**/*.scss')
+    return gulp.src('./app/assets/scss/**/*.scss')
       .pipe(sass().on('error', sass.logError))
-      .pipe(gulp.dest('./app/public/assets/css/'));
+      .pipe(gulp.dest('./app/assets/css/'));
   });
 
   gulp.task('sass:watch', function () {
-    gulp.watch('./app/public/assets/scss/**/*.scss', ['sass']);
+    gulp.watch('./app/assets/scss/**/*.scss', ['sass']);
   });
 
   //	Reload	the	server	on	HTML	changes
@@ -28,12 +28,12 @@
   });
   // Reload the server on CSS changes
   gulp.task('css', function() {
-    gulp.src('./app/public/assets/css/**/*.css')
+    gulp.src('./app/assets/css/**/*.css')
       .pipe(server.notify());
   });
   // Reload the server on JS app changes
   gulp.task('js', function() {
-    gulp.src('./app/public/**/*.js')
+    gulp.src('./app/**/*.js')
       .pipe(server.notify());
   });
 
@@ -53,8 +53,8 @@
     gulp.watch(['./server.js'], ['server.js']);
     gulp.watch(['./server/**/*.js'], ['js-server']);
 	  gulp.watch(['./app/**/*.html'],	['html']);
-    gulp.watch(['./app/public/assets/**/*.css'], ['css']);
-    gulp.watch(['./app/public/**/*.js'], ['js']);
+    gulp.watch(['./app/assets/**/*.css'], ['css']);
+    gulp.watch(['./app/**/*.js'], ['js']);
   });
 
   gulp.task('default',	['server',	'watch', 'sass:watch']);

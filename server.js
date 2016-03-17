@@ -20,7 +20,7 @@ var Article = require('./server/models/article');
 
 app.engine('html', cons.swig);
 
-app.set('views', __dirname + '/app/public/views');
+app.set('views', __dirname + '/app/views');
 
 app.set('view engine', 'html');
 
@@ -28,7 +28,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(bodyParser.json());
 
-app.use(serverStatic(__dirname + '/app/public'));
+app.use(serverStatic(__dirname + '/app'));
 
 var articleRouter = require('./server/routes/articles')(Article);
 
