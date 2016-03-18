@@ -1,0 +1,24 @@
+<div ng-init="show.findArticleById()">
+  <div class="row">
+    <div class="col-xs-6 col-md-4 col-md-offset-2">
+      <h5>{{show.article.createdAt | date}}</h5>
+    </div>
+    <div class="col-xs-6 col-md-4 text-right">
+      <h5 class="btn btn-default" ng-click="show.addLikes()">likes {{show.article.likes}}</h5>
+    </div>
+    <div class="col-xs-12 col-md-8 col-md-offset-2">
+      <h1 class="text-center">{{show.article.title}}</h1>
+
+      <h3>{{show.article.abstract}}</h3>
+
+        <h5 class="text-right">By <a href="#/authors/{{show.article.author}}">{{show.articleAuthor(show.article.author).name}}</a></h5>
+
+      <div class="article-body" ng-bind-html="show.article.body"></div>
+    </div>
+    <div class="col-xs-12 col-md-8 col-md-offset-2">
+      <a class="btn btn-primary form-control" href="#/articles/{{show.article._id}}/edit">Edit</a>
+      <a class="btn btn-info form-control" ng-click="show.remove(show.article)">Delete</a>
+    </div>
+
+  </div>
+</div>

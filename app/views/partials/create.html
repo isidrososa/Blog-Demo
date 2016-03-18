@@ -1,0 +1,31 @@
+<div class="article-create">
+  <h1 class="text-center">New Article</h1>
+  <div class="col-md-8 col-md-offset-2">
+    <form name="articleForm" role="form" data-ng-submit="create.createArticle(articleForm.$valid, articleForm.title.$invalid)" novalidate>
+
+      <div class="form-group" ng-class="{ 'has-error' : create.submitted && articleForm.title.$invalid }">
+        <label class="control-label" for="title">Title</label>
+        <input name="title" type="text" data-ng-model="create.article.title" class="form-control" placeholder="Title" required/>
+        <div class="control-label" ng-show="create.submitted && articleForm.title.$invalid">
+          <p ng-show="articleForm.title.$error.required">Article title is required</p>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label" for="abstract">Abstract</label>
+        <textarea name="abstract" type="text" data-ng-model="create.article.abstract" class="form-control" placeholder="Abstract" rows="3"></textarea>
+        <span id="helpBlock" class="help-block">Abstract is no required</span>
+      </div>
+
+      <div class="form-group" ng-class="{ 'has-error' : create.submitted && articleForm.body }">
+        <label class="control-label" for="body">Content</label>
+        <textarea name="body" ckeditor="create.editorOptions" data-ng-model="create.article.body" class="form-control" required></textarea>
+        <div class="control-label" ng-show="create.submitted && articleForm.body.$invalid">
+          <p ng-show="articleForm.body.$error.required">Article content is required</p>
+        </div>
+      </div>
+
+      <input type="submit" value="Save" class="btn btn-primary form-control"/>
+    </form>
+  </div>
+</div>

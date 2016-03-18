@@ -1,5 +1,6 @@
-node_modules
-
 .jshintrc
-app/lib
+.tern-port
 
+# Dependecies
+node_modules
+app/lib

@@ -1,0 +1,33 @@
+<div ng-init="author.authorIs()">
+  <div class="row">
+    <div class="col-md-2 col-md-offset-3 text-center">
+      <img src="{{author.author.photo}}" alt="" />
+    </div>
+    <div class="col-md-5">
+      <h3>{{author.author.name}}</h3>
+      <p>@{{author.author.username}}</p>
+      <p>{{author.author.description}}</p>
+    </div>
+    <div class="col-md-8 col-md-offset-2" ng-controller="ArticlesCtrl as articles" ng-init="articles.find()">
+      <ul class="list-unstyled">
+        <li ng-repeat="article in articles.articles | orderBy: '-createdAt'" id="article{{article.articleId}}" ng-show="article.author ===author.author.id">
+          <h1 class="text-center"><a href="#/articles/{{article._id}}">{{article.title}}</a></h1>
+          <h5 class="text-center">{{article.createdAt | date}} | By
+            <a href="#/authors/{{article.author}}">{{articles.articleAuthor(article.author).name}}</a>
+          </h5>
+          <p>
+            <div ng-show="article.abstract">
+              <p>{{article.abstract}}...</p>
+            </div>
+            <div ng-hide="article.abstract" data-ng-init="articles.shortBody(article.body)">
+              <p>{{articles.data | limitTo: 200}}...</p>
+            </div>
+            <a href="#/articles/{{article._id}}">more</a>
+            <a href="#/articles/{{article._id}}/edit">edit</a>
+            <a ng-click="list.remove(article)">delete</a>
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
